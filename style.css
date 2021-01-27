@@ -6,6 +6,24 @@ body {
     background-color: rgb(250, 250, 250);
 }
 
+.Boks {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "nav nav nav" 
+    "main main main"
+    "main main main";
+
+    font-size: 18px;
+    color: #000;
+}
+
+
+
+
 nav {
     background-color: rgb(255, 255, 255);
     margin: 0;
@@ -13,6 +31,7 @@ nav {
     color: black;
     -webkit-text-stroke: 1px black;
     margin-bottom: 4%;
+    grid-area: nav;
 }
 
 nav ul {
@@ -51,8 +70,10 @@ a {
 /*------------------INPUT------------------*/
 
 form {
-    margin-left: 20%;
     height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20%;
 }
 
 input {
@@ -69,9 +90,11 @@ input {
 .tekstBoks {
     margin-left: 20%;
     width: 60%;
-    height: 200px;
+    height: 300px;
     resize: none;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -100,53 +123,14 @@ p {
     justify-content: center;
 }
 
-.boks1 {
+.Bokser {
+    display: flex;
+    flex-direction: column;
     background-color: white;
     box-sizing: content-box;
     margin-top: 25px;
-    padding: 2%;
-    margin-right: 2%;
-    border-radius: 15px;
-}
-
-.boks2 {
-    background-color: white;
-    box-sizing: content-box;
-    margin-top: 25px;
-    padding: 2%;
-    margin-right: 2%;
-    border-radius: 15px;
-}
-
-.boks3 {
-    background-color: white;
-    box-sizing: content-box;
-    margin-top: 25px;
-    padding: 2%;
-    border-radius: 15px;
-}
-
-.oBoks1 {
-    background-color: white;
-    box-sizing: content-box;
-    padding: 2%;
-    margin-right: 2%;
-    border-radius: 15px;
-    width: fit-content;
-}
-
-.oBoks2 {
-    background-color: white;
-    box-sizing: content-box;
-    padding: 2%;
-    margin-right: 2%;
-    border-radius: 15px;
-}
-
-.oBoks3 {
-    background-color: white;
-    box-sizing: content-box;
-    padding: 2%;
+    padding: 1%;
+    margin: 1%;
     border-radius: 15px;
 }
 
@@ -155,117 +139,101 @@ li {
 }
 
 .gronnBoksAdd {
-    display: inline-block;
-    padding: 20px 50px;
-    overflow: hidden;
-    text-align: center;
-    cursor: default;
-    white-space: nowrap;
+    padding: 20px 30px;
+    margin-top: 1%;
+    cursor: pointer;
     color: #FFFFFF;
     background-color: #56d4c2;
-    width: fit-content;
     border-radius: 10px;
-    margin-left: 75%;
+    margin-left: 76.4%;
     font-weight: 700;
     font-size: large;
+    position: relative;
 }
 
 .gronnBoksComplete {
-    display: inline-flex;
     padding: 10px 30px;
-    overflow: hidden;
-    text-align: center;
     cursor: default;
-    white-space: nowrap;
     color: #FFFFFF;
     background-color: #56d4c2;
-    width: fit-content;
+    width: 80px;
     border-radius: 10px;
     margin-left: 70%;
     font-weight: 700;
     font-size: large;
+    position: relative; 
 }
 
 @media only screen and (max-width: 800px) {
+    
+    
+.Boks {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "nav" 
+    "main";
+
+    font-size: 18px;
+    color: #000;
+}
+nav {
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    overflow: hidden;
+    color: black;
+    -webkit-text-stroke: 1px black;
+    margin-bottom: 4%;
+    grid-area: nav;
+}
+    
     .Flex {
         background-color: rgb(250, 250, 250);
         grid-area: main;
-        display: flexbox;
-        flex-direction: column;
     }
+    
     .Flex>article {
-        display: flex;
-        justify-content: center;
+            display: flex;
+            margin: 5% 5% 10%;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
     }
-    .boks1 {
-        background-color: white;
+    
+    .Bokser {
         box-sizing: content-box;
-        margin-top: 25px;
-        padding: 2%;
-        margin-right: 2%;
-        border-radius: 15px;
-    }
-    .boks2 {
-        background-color: white;
-        box-sizing: content-box;
-        margin-top: 25px;
-        padding: 2%;
-        margin-right: 2%;
-        border-radius: 15px;
-    }
-    .boks3 {
-        background-color: white;
-        box-sizing: content-box;
-        margin-top: 25px;
-        padding: 2%;
-        border-radius: 15px;
-    }
-    .oBoks1 {
-        background-color: white;
-        box-sizing: content-box;
-        padding: 2%;
-        margin-right: 2%;
-        border-radius: 15px;
+        height: 100%;
         width: fit-content;
-    }
-    .oBoks2 {
-        background-color: white;
-        box-sizing: content-box;
-        padding: 2%;
-        margin-right: 2%;
+        padding: 3%;
+        margin-top: 2%;
         border-radius: 15px;
     }
-    .oBoks3 {
-        background-color: white;
-        box-sizing: content-box;
-        padding: 2%;
-        border-radius: 15px;
-    }
+    
     li {
         list-style: none;
     }
+    
     .gronnBoksAdd {
-        display: inline-block;
-        padding: 20px 50px;
-        overflow: hidden;
-        text-align: center;
-        cursor: default;
-        white-space: nowrap;
+        padding: 20px 30px;
+        margin-top: 1%;
+        cursor: pointer;
         color: #FFFFFF;
         background-color: #56d4c2;
-        width: fit-content;
         border-radius: 10px;
-        margin-left: 75%;
+        margin-left: 67%;
         font-weight: 700;
         font-size: large;
+        position: relative;
+        grid-area: main;
     }
+    
     .gronnBoksComplete {
-        display: inline-flex;
         padding: 10px 30px;
-        overflow: hidden;
         text-align: center;
         cursor: default;
-        white-space: nowrap;
         color: #FFFFFF;
         background-color: #56d4c2;
         width: fit-content;
@@ -273,5 +241,6 @@ li {
         margin-left: 70%;
         font-weight: 700;
         font-size: large;
+        grid-area: main;
     }
 }
